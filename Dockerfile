@@ -3,3 +3,6 @@ WORKDIR /app
 COPY . .
 RUN npm install
 ENV API_URL=https://api.my-app.com/
+EXPOSE 3000
+RUN addgroup app && adduser -S -G app app
+USER app
